@@ -21,27 +21,6 @@ export default function App() {
     },
   });
 
-  const animatedTitleStyle = useAnimatedStyle(() => {
-    return {
-      position: "absolute",
-      top: 50,
-      zIndex: 10,
-      backgroundColor: "#fff",
-      opacity: interpolate(scrollY.value, [0, 60], [1, 0.7], Extrapolate.CLAMP),
-      transform: [
-        {
-          translateY: interpolate(
-            scrollY.value,
-            [0, 60],
-            [0, -20],
-            Extrapolate.CLAMP
-          ),
-        },
-      ],
-      alignItems: "center",
-    };
-  });
-
   return (
     <View style={styles.container}>
       <Animated.FlatList
